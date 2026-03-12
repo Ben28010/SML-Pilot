@@ -1,0 +1,163 @@
+/* applies to the whole page - sets the font, background colour and spacing */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 30px;
+  margin: 0;
+}
+
+/* the white card that holds all the content, centred on the page */
+.box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border: 1px solid #ccc;
+}
+
+/* main page heading */
+h1 {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+/* small grey text below the heading */
+.sub {
+  color: #888;
+  font-size: 0.88rem;
+  margin-bottom: 24px;
+}
+
+/* large percentage score on the results screen */
+#res-score {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+/* summary text below the score */
+#res-detail {
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* bold label above each input field */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 14px;
+}
+
+/* shared style for the two dropdowns and the custom number field */
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 7px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+/* the box the student types their answer into */
+textarea {
+  width: 100%;
+  padding: 7px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+/* base style shared by all buttons */
+button {
+  margin-top: 12px;
+  padding: 9px 20px;
+  font-size: 1rem;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* slightly darker when hovering over a button */
+button:hover {
+  background: #1558b0;
+}
+
+/* greyed out when a button is disabled so it cannot be clicked */
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* secondary grey button style used for the review answers button */
+.btn-grey {
+  background: #555;
+  margin-left: 10px;
+}
+
+/* slightly darker grey on hover for the grey button */
+.btn-grey:hover {
+  background: #333;
+}
+
+/* the light blue box that displays the generated exam question */
+.question-box {
+  background: #eef4ff;
+  border-left: 4px solid #1a73e8;
+  padding: 14px;
+  margin-top: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* green box shown when the answer is correct */
+.correct {
+  background: #eafaf1;
+  border-left: 4px solid #27ae60;
+  padding: 12px;
+  margin-top: 14px;
+}
+
+/* red box shown when the answer is incorrect */
+.incorrect {
+  background: #fdecea;
+  border-left: 4px solid #e74c3c;
+  padding: 12px;
+  margin-top: 14px;
+}
+
+/* small grey text showing which question number the user is on */
+.progress {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* italic grey text shown while the model is generating or evaluating */
+.loading {
+  color: #777;
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* hides any element that should not be visible right now */
+.hidden {
+  display: none;
+}
+
+/* thin horizontal line used to separate the review section */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* each answered question card in the review section */
+.review-card {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}

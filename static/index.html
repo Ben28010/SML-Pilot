@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pilot Exam Practice</title>
+  <link rel="stylesheet" href="style.css" />  <!-- loads all the visual styling from style.css -->
+</head>
+<body>
+
+<div class="box">
+
+  <h1>Pilot Exam Practice</h1>
+  <p class="sub">AI-generated questions from your syllabus documents.</p>
+
+  <!-- setup screen: first screen the user sees -->
+  <div id="screen-setup">
+
+    <label for="sel-topic">Topic</label>
+    <select id="sel-topic">
+      <option value="">Loading topics...</option>  <!-- replaced with real topics by javascript -->
+    </select>
+
+    <label for="sel-count">Number of questions</label>
+    <select id="sel-count">
+      <option value="3">3</option>
+      <option value="5" selected>5</option>
+      <option value="10">10</option>
+      <option value="custom">Custom</option>
+    </select>
+
+    <!-- hidden until the user picks custom from the dropdown above -->
+    <div id="custom-wrap" class="hidden">
+      <label for="input-custom">Enter number (1-20)</label>
+      <input type="number" id="input-custom" min="1" max="20" value="7" />
+    </div>
+
+    <button id="btn-start">Start Test</button>
+
+  </div>
+
+  <!-- test screen: shown during the test, one question at a time -->
+  <div id="screen-test" class="hidden">
+
+    <p class="progress" id="progress-text"></p>  <!-- e.g. question 2 of 5 -->
+
+    <p class="loading hidden" id="loading-q">Generating question...</p>
+
+    <div class="question-box hidden" id="question-box"></div>  <!-- the generated question goes here -->
+
+    <div class="hidden" id="answer-section">
+      <label for="answer-input">Your answer</label>
+      <textarea id="answer-input" rows="4" placeholder="Type your answer here..."></textarea>
+      <button id="btn-submit">Submit Answer</button>
+    </div>
+
+    <p class="loading hidden" id="loading-eval">Evaluating your answer...</p>
+
+    <div class="hidden" id="feedback"></div>  <!-- correct or incorrect result goes here -->
+
+    <div class="hidden" id="next-wrap">
+      <button id="btn-next">Next Question</button>
+    </div>
+
+  </div>
+
+  <!-- results screen: shown once all questions are done -->
+  <div id="screen-results" class="hidden">
+
+    <h2 id="res-score"></h2>  <!-- the final percentage score -->
+    <p id="res-detail"></p>   <!-- e.g. you got 4 out of 5 correct -->
+
+    <button id="btn-new-test">Start New Test</button>
+    <button id="btn-review" class="btn-grey">Review Answers</button>
+
+    <!-- the review section stays hidden until the user clicks review answers -->
+    <div class="hidden" id="review-section">
+      <hr />
+      <h3>Answer Review</h3>
+      <div id="review-list"></div>  <!-- review cards are inserted here by javascript -->
+    </div>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>  <!-- loads all the logic from app.js, placed at the end so the html loads first -->
+</body>
+</html>
